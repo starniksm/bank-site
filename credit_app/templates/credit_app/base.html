@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Т-Банк - Кредиты на любые цели{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'credit_app/css/style.css' %}?v=2.1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Верхний хедер -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+        <!-- Основной хедер -->
+        <div class="header__main">
+            <div class="container">
+                <div class="header__main-inner">
+                    <!-- Логотип -->
+                    <div class="header__logo">
+                        <a href="/" class="logo">
+                            <img src="{% static 'credit_app/images/logo.png' %}" alt="Т-Банк" class="logo__image">
+                        </a>
+                    </div>
+
+                    <!-- Основная навигация -->
+                    <nav class="header__nav">
+                        <div class="nav__item dropdown">
+                            <a href="#" class="nav__link">Частным лицам <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown__menu">
+                                <a href="/loans/" class="dropdown__link">Кредиты</a>
+                                <a href="#" class="dropdown__link">Карты</a>
+                                <a href="#" class="dropdown__link">Вклады</a>
+                                <a href="#" class="dropdown__link">Ипотека</a>
+                                <a href="#" class="dropdown__link">Инвестиции</a>
+                            </div>
+                        </div>
+                        <div class="nav__item">
+                            <a href="#" class="nav__link">Бизнесу</a>
+                        </div>
+                        <div class="nav__item">
+                            <a href="#" class="nav__link">Премиум</a>
+                        </div>
+                        <div class="nav__item dropdown">
+                            <a href="#" class="nav__link">Ещё <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown__menu">
+                                <a href="#" class="dropdown__link">Страхование</a>
+                                <a href="#" class="dropdown__link">Денежные переводы</a>
+                                <a href="#" class="dropdown__link">Путешествия</a>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <!-- Личный кабинет -->
+                    <div class="header__auth">
+                        <a href="#" class="auth-link">
+                            <i class="fas fa-user"></i>
+                            <span>Войти</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__main">
+                    <div class="footer__section">
+                        <h4 class="footer__title">Частным лицам</h4>
+                        <a href="/loans/" class="footer__link">Кредиты</a>
+                        <a href="#" class="footer__link">Карты</a>
+                        <a href="#" class="footer__link">Вклады</a>
+                        <a href="#" class="footer__link">Ипотека</a>
+                    </div>
+                    <div class="footer__section">
+                        <h4 class="footer__title">Бизнесу</h4>
+                        <a href="#" class="footer__link">Расчётный счёт</a>
+                        <a href="#" class="footer__link">Кредитование</a>
+                        <a href="#" class="footer__link">Эквайринг</a>
+                    </div>
+                    <div class="footer__section">
+                        <h4 class="footer__title">О банке</h4>
+                        <a href="#" class="footer__link">О нас</a>
+                        <a href="#" class="footer__link">Контакты</a>
+                        <a href="#" class="footer__link">Вакансии</a>
+                    </div>
+                    <div class="footer__section">
+                        <h4 class="footer__title">Контакты</h4>
+                        <div class="footer__contacts">
+                            <a href="tel:88002500000" class="footer__contact-link">8 800 250-00-00</a>
+                            <span class="footer__contact-text">Бесплатно по России</span>
+                        </div>
+                        <div class="footer__social">
+                            <a href="https://vk.com/tbank" class="social-link vk">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                            <a href="https://ok.ru/group/53915694989329" class="social-link ok">
+                                <i class="fab fa-odnoklassniki"></i>
+                            </a>
+                            <a href="https://t.me/tbank" class="social-link tg">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <div class="footer__copyright">
+                        © 2025 АО «Т-Банк». Данный сайт не является собственностью банка, а лишь является его прототипом.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'credit_app/js/script.js' %}"></script>
+</body>
+</html>

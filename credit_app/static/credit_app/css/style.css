@@ -1,0 +1,1039 @@
+/* Reset и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #f6f7f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+
+.header__top {
+    background: white;
+    padding: px 0;
+    font-size: 10px;
+    text-color: white;
+}
+
+.contact-link {
+    color: #0050FF;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-text {
+    color: #666;
+}
+
+.header__top-links {
+    display: flex;
+    gap: 10px;
+}
+
+.top-link {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.top-link:hover {
+    color: #0050FF;
+}
+
+/* Основной хедер */
+.header__main {
+    padding: 4px 0;
+}
+
+.header__main-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__nav {
+    display: flex;
+    gap: 32px;
+}
+
+.nav__item {
+    position: relative;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #333333;
+    font: var(--tui-font-text-m);
+    font-weight: 100;
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+    font-size: 12px;
+}
+
+.nav__link:hover {
+    color: #0050FF;
+}
+
+/* Dropdown меню */
+.dropdown__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown__link {
+    display: block;
+    padding: 8px 0;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.dropdown__link:hover {
+    color: #0050FF;
+}
+
+/* Личный кабинет */
+.header__auth {
+    margin-left: auto;
+}
+
+.auth-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.auth-link:hover {
+    background: #f8f9fa;
+    color: #0050FF;
+}
+
+/* Стили для хлебных крошек */
+.breadcrumbs {
+    padding: 16px 0;
+    background: #f6f7f8;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+
+.breadcrumbs__nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumbs__link {
+    color: #707071; /* НОВЫЙ ЦВЕТ */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs__link:hover {
+    color: #0050FF;
+}
+
+.breadcrumbs__separator {
+    color: #707071; /* НОВЫЙ ЦВЕТ */
+    font-size: 12px;
+}
+
+.breadcrumbs__current {
+    color: #707071; /* НОВЫЙ ЦВЕТ */
+    font-weight: 500;
+}
+
+/* Герой секция */
+.hero {
+    padding: 40px 0;
+    background: #f6f7f8; /* Меняем градиент на основной фон */
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0; /* Добавляем легкую границу */
+}
+
+.hero__title {
+    font: var(--tui-font-heading-2);
+    margin-top: 30px;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #313132;
+    line-height: 48px;
+}
+
+.hero__subtitle {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 100;
+}
+
+/* Категории кредитов */
+.loan-categories {
+    padding: 80px 0;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.category-card {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    border-color: #0050FF;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 80, 255, 0.1);
+}
+
+.category-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.category-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.category-desc {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Популярные кредиты */
+.popular-loans {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+}
+
+
+/* ===== ОБНОВЛЕННЫЕ СТИЛИ ДЛЯ ИЗОБРАЖЕНИЙ ===== */
+.loan-card {
+    background: #eaebed;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.loan-card__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-height: 300px; /* Минимальная высота карточки */
+}
+
+.loan-card__info {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.loan-card__image {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.loan-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Важно: заполняет весь контейнер */
+    object-position: center;
+    display: block;
+}
+
+/* Убираем фон и отступы у контейнера изображения */
+.loan-card__image {
+    background: none;
+    padding: 0;
+}
+
+/* Заголовок и текст */
+.loan-card__header {
+    margin-bottom: 24px;
+}
+
+.loan-card__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+}
+
+.loan-card__subtitle {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Особенности кредита */
+.loan-card__features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.feature {
+    text-align: center;
+    padding: 16px;
+    background: #f8f9ff;
+    border-radius: 8px;
+    border-left: 4px solid #0050FF;
+}
+
+.feature__value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+}
+
+.feature__label {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+
+/* ===== КЛИКАБЕЛЬНЫЕ КАРТОЧКИ ===== */
+.loan-card--clickable {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Анимация при наведении */
+.loan-card--clickable:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Плавная анимация */
+.loan-card--clickable {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Убираем стандартные стили ссылки */
+.loan-card--clickable,
+.loan-card--clickable:hover,
+.loan-card--clickable:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Меняем курсор на pointer */
+.loan-card--clickable {
+    cursor: pointer;
+}
+
+/* Делаем кнопки внутри карточки некликабельными */
+.loan-card--clickable .btn {
+    pointer-events: none;
+}
+
+/* Убираем стили ссылки у кнопок внутри карточки */
+.loan-card--clickable .btn--calculate,
+.loan-card--clickable .btn--details {
+    text-decoration: none;
+}
+
+/* Кнопки */
+.loan-card__actions {
+    display: flex;
+    gap: 12px;
+    margin-top: auto; /* Прижимаем кнопки к низу */
+}
+
+/* Кнопки */
+.loan-card__actions {
+    display: flex;
+    gap: 16px;
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9ff;
+    border-radius: 8px;
+    border-left: 4px solid #0050FF;
+}
+
+.feature__value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.feature__label {
+    color: #666;
+    font-size: 14px;
+}
+
+.loan-card__actions {
+    display: flex;
+    gap: 16px;
+}
+
+/* ===== ОСНОВНЫЕ СТИЛИ КНОПОК ===== */
+.btn {
+    padding: 16px 20px;
+    border: none;
+    border-radius: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ===== 1. КНОПКА "РАССЧИТАТЬ КРЕДИТ" ===== */
+.btn--calculate {
+    background: #ffdd2a;
+    color: #333333;
+    font-weight: 600;
+    padding: 14px 32px;
+}
+
+.btn--calculate:hover {
+    background: #ffcc31;
+    transform: translateY(-2px);
+}
+
+/* ===== 2. КНОПКА "ПОДРОБНЕЕ" ===== */
+.btn--details {
+    background: transparent;
+    color: #0050FF;
+    border: 2px solid #0050FF;
+    font-weight: 500;
+    padding: 12px 28px;
+}
+
+.btn--details:hover {
+    background: #0050FF;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* ===== 3. КНОПКА "ОТПРАВИТЬ ЗАЯВКУ" ===== */
+.btn--submit {
+    background: #27ae60;
+    color: white;
+    font-weight: 600;
+    padding: 16px 32px;
+    font-size: 17px;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    width: 100%;
+}
+
+.btn--submit:hover {
+    background: #219a52;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+
+.btn--primary {
+    background: #ffdd2a;
+    color: #333333;
+    font-weight: 100;
+}
+
+
+.btn--primary:hover {
+    background: #ffcc31;
+}
+
+.btn--outline {
+    background: transparent;
+    border: 2px solid #ffcc31;
+    color: #ffcc31;
+}
+
+.btn--outline:hover {
+    background: #ffcc31;
+    color: white;
+}
+
+.btn--large {
+    padding: 18px 26px;
+    font-size: 14px;
+}
+
+.btn--full {
+    width: 10%;
+}
+
+/* Страница кредита */
+.page-hero {
+    background: linear-gradient(135deg, #0050FF 0%, #002966 100%);
+    color: white;
+    padding: 60px 0;
+}
+
+.page-hero__title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.page-hero__subtitle {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    text-color: #ffcc31
+}
+
+.hero-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+}
+
+.hero-feature {
+    text-align: center;
+}
+
+.hero-feature__value {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.hero-feature__label {
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+/* Калькулятор на странице кредита */
+.calculator-section {
+    padding: 80px 0;
+}
+
+.calculator-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
+    align-items: start;
+}
+
+.calculator-main {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: #1a1a1a;
+}
+
+.calculator-inputs {
+    margin-bottom: 40px;
+}
+
+.input-group {
+    margin-bottom: 32px;
+}
+
+.input-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+}
+
+.range-container {
+    position: relative;
+}
+
+.range-input {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #e9ecef;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #0050FF;
+    cursor: pointer;
+    border: 4px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.range-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #666;
+}
+
+.range-values span:nth-child(2) {
+    font-weight: 600;
+    color: #0050FF;
+}
+
+.calculator-results {
+    border-top: 1px solid #e9ecef;
+    padding-top: 32px;
+}
+
+.result-card {
+    background: #f8f9ff;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-label {
+    color: #666;
+}
+
+.result-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* Форма заявки */
+.calculator-form {
+    position: sticky;
+    top: 100px;
+}
+
+.application-form {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #0050FF;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-top: 4px;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Условия кредита */
+.loan-conditions {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.condition-card {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.condition-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.condition-card ul {
+    list-style: none;
+}
+
+.condition-card li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.condition-card li:before {
+    content: "•";
+    color: #0050FF;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Преимущества */
+.benefits {
+    padding: 80px 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 40px 24px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+}
+
+.benefit-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Футер */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer__main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.footer__link {
+    display: block;
+    text-decoration: none;
+    color: #ccc;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+    font-size: 14px;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.footer__contacts {
+    margin-bottom: 20px;
+}
+
+.footer__contact-link {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.footer__contact-text {
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Стили для социальных иконок */
+.footer__social {
+    display: flex;
+    gap: 12px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+/* ВКонтакте - синий цвет при наведении */
+.social-link.vk:hover {
+    background: #0050FF !important;
+    transform: translateY(-2px);
+}
+
+/* Одноклассники - оранжевый цвет при наведении */
+.social-link.ok:hover {
+    background: #FF7700 !important;
+    transform: translateY(-2px);
+}
+
+/* Телеграм - голубой цвет при наведении */
+.social-link.tg:hover {
+    background: #0088CC !important;
+    transform: translateY(-2px);
+}
+
+.footer__bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.footer__copyright {
+    color: #ccc;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Сообщения */
+.message {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header__top-inner {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .header__main-inner {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .header__nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .calculator-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .loan-card__actions {
+        flex-direction: column;
+    }
+
+    .hero__title {
+        font-size: 36px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero__title {
+        font-size: 28px;
+    }
+
+    .page-hero__title {
+        font-size: 32px;
+    }
+
+    .calculator-main,
+    .application-form {
+        padding: 24px;
+    }
+
+    .loan-card {
+        padding: 24px;
+    }
+}
+
+.logo__image {
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+    margin: 6px 40px;
+    margin-left: 137px;
+}

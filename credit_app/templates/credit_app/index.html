@@ -1,0 +1,162 @@
+{% extends 'credit_app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Герой секция -->
+<section class="hero">
+    <div class="container">
+        <div class="hero__content">
+            <h1 class="hero__title">Кредиты на любые цели</h1>
+            <p class="hero__subtitle">Деньги без справок и поручителей на покупку квартиры, ремонт, отдых и другие траты.
+                Удобный расчет на калькуляторе и оформление онлайн</p>
+            <a href="{% url 'credit_cash' %}" class="btn btn--primary btn--large">Рассчитать кредит</a>
+        </div>
+    </div>
+</section>
+
+<!-- Категории кредитов -->
+<section class="loan-categories">
+    <div class="container">
+        <div class="categories-grid">
+            <a href="{% url 'credit_cash' %}" class="category-card">
+                <div class="category-icon">💳</div>
+                <h3 class="category-title">На любые цели</h3>
+                <p class="category-desc">Кредит наличными</p>
+            </a>
+
+            <a href="{% url 'credit_auto' %}" class="category-card">
+                <div class="category-icon">🚗</div>
+                <h3 class="category-title">На автомобиль</h3>
+                <p class="category-desc">Автокредит</p>
+            </a>
+
+            <a href="{% url 'credit_refinance' %}" class="category-card">
+                <div class="category-icon">🔄</div>
+                <h3 class="category-title">На погашение других кредитов</h3>
+                <p class="category-desc">Рефинансирование</p>
+            </a>
+
+            <a href="{% url 'credit_real_estate' %}" class="category-card">
+                <div class="category-icon">🏠</div>
+                <h3 class="category-title">На покупку недвижимости</h3>
+                <p class="category-desc">Ипотека</p>
+            </a>
+
+            <a href="{% url 'credit_education' %}" class="category-card">
+                <div class="category-icon">🎓</div>
+                <h3 class="category-title">На обучение</h3>
+                <p class="category-desc">Образовательный кредит</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Популярные кредиты -->
+<section class="popular-loans">
+    <div class="container">
+        <h2 class="section-title">Популярные кредиты</h2>
+
+        <!-- Кредит наличными -->
+        <a href="{% url 'credit_cash' %}" class="loan-card loan-card--clickable">
+            <div class="loan-card__content">
+                <div class="loan-card__info">
+                    <div class="loan-card__header">
+                        <h3 class="loan-card__title">Кредит наличными</h3>
+                        <p class="loan-card__subtitle">Деньги на любые покупки без справок о доходах и поручителей. Нужен только паспорт</p>
+                    </div>
+
+                    <div class="loan-card__features">
+                        <div class="feature">
+                            <div class="feature__value">До 30 000 000 ₽</div>
+                            <div class="feature__label">Сумма кредита</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__value">До 15 лет</div>
+                            <div class="feature__label">Срок кредита</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__value">Бесплатно</div>
+                            <div class="feature__label">Привезем карту — деньги будут на ней</div>
+                        </div>
+                    </div>
+
+                    <div class="loan-card__actions">
+                        <span class="btn btn--calculate">Рассчитать</span>
+                        <span class="btn btn--details">Подробнее</span>
+                    </div>
+                </div>
+
+                <div class="loan-card__image">
+                    <img src="{% static 'credit_app/images/cash-loan.avif' %}" alt="Кредит наличными" class="loan-image">
+                </div>
+            </div>
+        </a>
+
+        <!-- Автокредит -->
+        <a href="{% url 'credit_auto' %}" class="loan-card loan-card--clickable">
+            <div class="loan-card__content">
+                <div class="loan-card__info">
+                    <div class="loan-card__header">
+                        <h3 class="loan-card__title">Автокредит</h3>
+                        <p class="loan-card__subtitle">Кредит наличными на покупку авто — нового или с пробегом. Без справок о доходах и поручителей — нужен только паспорт</p>
+                    </div>
+
+                    <div class="loan-card__features">
+                        <div class="feature">
+                            <div class="feature__value">До 8 000 000 ₽</div>
+                            <div class="feature__label">Сумма кредита</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__value">До 8 лет</div>
+                            <div class="feature__label">Срок кредита</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__value">0 ₽</div>
+                            <div class="feature__label">Первоначальный взнос</div>
+                        </div>
+                    </div>
+
+                    <div class="loan-card__actions">
+                        <span class="btn btn--calculate">Рассчитать</span>
+                        <span class="btn btn--details">Подробнее</span>
+                    </div>
+                </div>
+
+                <div class="loan-card__image">
+                    <img src="{% static 'credit_app/images/auto-loan.avif' %}" alt="Автокредит" class="loan-image">
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- Преимущества -->
+<section class="benefits">
+    <div class="container">
+        <h2 class="section-title">Почему выбирают Т-Банк</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3>Решение за 5 минут</h3>
+                <p>Рассмотрение заявки онлайн без визита в отделение</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📄</div>
+                <h3>Минимум документов</h3>
+                <p>Только паспорт для большинства кредитов</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💳</div>
+                <h3>Деньги на карту</h3>
+                <p>Перевод на любую карту любого банка</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🛡️</div>
+                <h3>Безопасно</h3>
+                <p>Все операции защищены по стандарту PCI DSS</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
