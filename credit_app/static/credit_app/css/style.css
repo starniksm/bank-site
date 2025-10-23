@@ -212,6 +212,22 @@ body {
     font-weight: 100;
 }
 
+.hero__main {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.hero__submain {
+    font-size: 14px;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+}
+
 /* Категории кредитов */
 .loan-categories {
     padding: 80px 0;
@@ -323,11 +339,11 @@ body {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 12px;
-    color: #1a1a1a;
+    color: #2f2f30;
 }
 
 .loan-card__subtitle {
-    color: #666;
+    color: #2f2f30;
     font-size: 16px;
     line-height: 1.5;
 }
@@ -362,24 +378,25 @@ body {
 }
 
 
-/* ===== КЛИКАБЕЛЬНЫЕ КАРТОЧКИ ===== */
+/* ===== УЛУЧШЕННЫЕ КЛИКАБЕЛЬНЫЕ КАРТОЧКИ ===== */
 .loan-card--clickable {
     display: block;
     text-decoration: none;
     color: inherit;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
+    position: relative;
 }
 
-/* Анимация при наведении */
+/* Анимация при наведении - подъем + увеличение */
 .loan-card--clickable:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transform: scale(1.01);
+    z-index: 10;
 }
 
-/* Плавная анимация */
+/* Плавная анимация для всей карточки */
 .loan-card--clickable {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 /* Убираем стандартные стили ссылки */
@@ -390,20 +407,31 @@ body {
     color: inherit;
 }
 
-/* Меняем курсор на pointer */
-.loan-card--clickable {
-    cursor: pointer;
-}
-
-/* Делаем кнопки внутри карточки некликабельными */
+/* Делаем кнопки внутри карточки ОСТАЮТСЯ активными */
 .loan-card--clickable .btn {
-    pointer-events: none;
+    pointer-events: auto; /* Важно: оставляем кликабельными */
+    position: relative;
+    z-index: 20; /* Чтобы кнопки были выше карточки */
 }
 
-/* Убираем стили ссылки у кнопок внутри карточки */
-.loan-card--clickable .btn--calculate,
-.loan-card--clickable .btn--details {
-    text-decoration: none;
+/* Анимация для кнопок внутри карточки */
+.loan-card--clickable:hover .btn--calculate {
+    transform: translateY(-1px);
+    transform: translateX(-1px);
+    transition: transform 0.5s ease;
+}
+
+.loan-card--clickable:hover .btn--details {
+    transform: translateX(-1px);
+    transform: translateY(-1px)
+    transition: transform 0.5s ease;
+}
+
+/* Улучшаем внешний вид карточки при наведении */
+
+.loan-card--clickable:hover .feature {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8f0ff 100%);
+    border-left-color: #0041d4;
 }
 
 /* Кнопки */
@@ -463,8 +491,9 @@ body {
 .btn--calculate {
     background: #ffdd2a;
     color: #333333;
-    font-weight: 600;
-    padding: 14px 32px;
+    font-weight: 250;
+    padding: 12px 24px;
+    margin-top: 35px;
 }
 
 .btn--calculate:hover {
@@ -475,15 +504,16 @@ body {
 /* ===== 2. КНОПКА "ПОДРОБНЕЕ" ===== */
 .btn--details {
     background: transparent;
-    color: #0050FF;
-    border: 2px solid #0050FF;
-    font-weight: 500;
-    padding: 12px 28px;
+    color: #106ef7;
+    border: none;
+    font-weight: 250;
+    padding: 12px 24px;
+    margin-top: 35px;
 }
 
 .btn--details:hover {
-    background: #0050FF;
-    color: white;
+    background: #d9dde4; /* Оставляем прозрачным */
+    text-decoration: none; /* Убираем подчеркивание при наведении */
     transform: translateY(-1px);
 }
 
@@ -1031,9 +1061,10 @@ body {
 }
 
 .logo__image {
-    width: 26px;
-    height: 26px;
+    width: 32px;
+    height: 32px;
     margin-right: 10px;
     margin: 6px 40px;
-    margin-left: 137px;
+    margin-left: 37px;
 }
+

@@ -10,4 +10,5 @@ urlpatterns = [
     path('loans/real-estate/', views.credit_real_estate, name='credit_real_estate'),
     path('loans/education/', views.credit_education, name='credit_education'),
     path('calculate/', views.calculate_credit, name='calculate_credit'),
+    path('auth/', views.auth_page, name='auth_page'),
 ]

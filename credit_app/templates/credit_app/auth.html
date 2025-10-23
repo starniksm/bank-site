@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в аккаунт - Т-Банк</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'credit_app/css/auth.css' %}?v=1.4">
 </head>
-<body>
-$END$
+<body class="auth-body">
+    <!-- Логотип в левом верхнем углу страницы -->
+    <div class="auth-logo-top">
+        <div class="auth-logo">
+            <img src="{% static 'credit_app/images/t-id.png' %}" alt="Т-Банк" class="auth-logo__image">
+        </div>
+    </div>
+
+    <!-- Кнопка закрытия -->
+    <a href="{% url 'index' %}" class="auth-close-btn">
+        <i class="fas fa-times"></i>
+    </a>
+
+    <div class="auth-page">
+        <div class="auth-container-main">
+            <!-- Форма авторизации -->
+            <div class="auth-form-wrapper">
+                <h1 class="auth-title-main">Вход в Т-Банк</h1>
+                <p class="auth-subtitle-main">Введите номер телефона для входа</p>
+
+                <form id="authForm" class="auth-form-main">
+                    {% csrf_token %}
+
+                    <div class="auth-form-group auth-floating-group">
+                        <input type="tel" id="authPhone" name="phone" class="auth-floating-input" required placeholder=" " maxlength="18">
+                        <label for="authPhone" class="auth-floating-label">Телефон</label>
+                    </div>
+
+                    <button type="submit" class="auth-btn auth-btn--primary auth-btn--full auth-btn--large">Продолжить</button>
+                </form>
+
+                <div class="auth-links-section">
+                    <a href="#" class="auth-link-item">Войти с паролем</a>
+                    <a href="#" class="auth-link-item">Зарегистрироваться</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'credit_app/js/auth.js' %}?v=1.4"></script>
 </body>
 </html>

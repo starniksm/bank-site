@@ -125,3 +125,7 @@ def calculate_credit(request):
         })
 
     return JsonResponse({'error': 'Invalid request'})
+
+def auth_page(request):
+    """Страница авторизации"""
+    return render(request, 'credit_app/auth.html')

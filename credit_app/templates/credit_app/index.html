@@ -15,7 +15,7 @@
     </div>
 </section>
 
-<!-- Категории кредитов -->
+<!-- Категории кредитов
 <section class="loan-categories">
     <div class="container">
         <div class="categories-grid">
@@ -50,12 +50,11 @@
             </a>
         </div>
     </div>
-</section>
+</section>-->
 
 <!-- Популярные кредиты -->
 <section class="popular-loans">
     <div class="container">
-        <h2 class="section-title">Популярные кредиты</h2>
 
         <!-- Кредит наличными -->
         <a href="{% url 'credit_cash' %}" class="loan-card loan-card--clickable">
@@ -129,6 +128,13 @@
             </div>
         </a>
     </div>
+</section>
+
+<section class="hero">
+    <h1 class="hero__main">Узнайте возможные условия уже сейчас</h1>
+    <div class="hero__submain">Укажите желаемую сумму и срок кредита, калькулятор сразу покажет примерный размер
+        ежемесячного платежа</div>
+    <a href="{% url 'credit_cash' %}" class="btn btn--primary btn--large">Рассчитать кредит</a>
 </section>
 
 <!-- Преимущества -->
